@@ -44,12 +44,15 @@ def handle_btn_get_info():
   if poke_info:
     label_height_value['text'] = str(poke_info['height'] + 'dm')
     ##weight
-    ##types_list
     types_list = [t['type']['name'].capitalize() for t in poke_info['types']]
-    #type_value
+    
+    
     #------stats
+    #type_value
+    
     label_type_value['text'] = ', '.join(types_list)
-    bar_hp['value']= poke_info['stats'][0]['base_']
+    bar_hp['value']= poke_info['stats'][0]['base_stat']
+    bar_attack['value']= poke_info['stats'][1]['base_stat']
 
     
     
